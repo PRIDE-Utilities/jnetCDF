@@ -30,7 +30,7 @@ public class NetCDFFile {
     /**
      * The netCDFFile source file.
      */
-    private File sourcefile;
+    private File sourceFile;
 
     private static final Logger logger = LoggerFactory.getLogger(NetCDFFile.class);
 
@@ -52,11 +52,11 @@ public class NetCDFFile {
 
     private SortedMap<Integer, Tuple> indexElement = new TreeMap<Integer, Tuple>();
 
-    public NetCDFFile(File sourcefile) throws netCDFParsingException, IOException {
-        this.sourcefile = sourcefile;
+    public NetCDFFile(File sourceFile) throws netCDFParsingException, IOException {
+        this.sourceFile = sourceFile;
         // Open NetCDF-file
         try {
-            inputFile = NetcdfFile.open(this.sourcefile.getPath());
+            inputFile = NetcdfFile.open(this.sourceFile.getPath());
         } catch (IOException e) {
             throw new  netCDFParsingException("Some errors creating the netCDF file", e.fillInStackTrace());
         }
@@ -252,6 +252,8 @@ public class NetCDFFile {
 
         scan.setRetentionTime((Float)indexElement.get(scanIndex).getValue());
 
+        scan.setId(scanIndex);
+
         return scan;
 
     }
@@ -301,6 +303,11 @@ public class NetCDFFile {
         return scanIds;
     }
 
+    /**
+     * Returns all the metadata related with the experiments as key-value pairs.
+     *
+     * @return
+     */
     public Metadata getMetadata(){
 
         HashMap<String, String> globalAttr = new HashMap<String, String>();

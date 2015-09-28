@@ -24,5 +24,17 @@ public class NetCDFConstants {
 
     public static final String INSTRUMENT_MFR = "instrument_mfr";
 
+    public static final String EXPERIMENT_DATE = "experiment_date_time_stamp";
 
+    public static final String EXPERIMENT_TITLE = "Experiment";
+
+    public static final String DATASET_OWNER    = "dataset_owner";
+
+    public static final String ADMINISTRTATIVE_COMMENTS = "administrative_comments";
+
+    public static final String SOURCES = "external_file_ref";
+
+    public static final String OPERATOR_NAME = "operator_name";
+
+    public static final String EXPERIMENT_TYPE = "experiment_type";
 }

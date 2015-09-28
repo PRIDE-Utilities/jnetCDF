@@ -14,13 +14,16 @@ public class MsScan {
 
     private Float retentionTime;
 
+    private String id;
+
     public MsScan() {
     }
 
-    public MsScan(Map<Float, Float> dataPoints, SpectrumType spectrumType, Float retentionTime) {
+    public MsScan(Map<Float, Float> dataPoints, SpectrumType spectrumType, Float retentionTime, String id) {
         this.dataPoints = dataPoints;
         this.spectrumType = spectrumType;
         this.retentionTime = retentionTime;
+        this.id = id;
     }
 
     public void setDataPoints(Map<Float, Float> dataPoints) {
@@ -45,5 +48,13 @@ public class MsScan {
 
     public void setRetentionTime(Float retentionTime) {
         this.retentionTime = retentionTime;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = String.valueOf(id);
     }
 }
