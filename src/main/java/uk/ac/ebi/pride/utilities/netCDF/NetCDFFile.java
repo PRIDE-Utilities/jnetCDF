@@ -11,6 +11,7 @@ import ucar.nc2.NetcdfFile;
 import ucar.nc2.Variable;
 import uk.ac.ebi.pride.utilities.netCDF.core.MsScan;
 import uk.ac.ebi.pride.utilities.netCDF.core.SpectrumType;
+import uk.ac.ebi.pride.utilities.netCDF.utils.NetCDFConstants;
 import uk.ac.ebi.pride.utilities.netCDF.utils.Tuple;
 import uk.ac.ebi.pride.utilities.netCDF.utils.netCDFParsingException;
 
@@ -67,21 +68,21 @@ public class NetCDFFile {
     private void readMsRunAttributes() throws IOException, netCDFParsingException {
 
         // Find mass_values and intensity_values variables
-        massValueVariable = inputFile.findVariable("mass_values");
-        intensityValueVariable = inputFile.findVariable("intensity_values");
-        scanIndexVariable = inputFile.findVariable("scan_index");
-        scanTimeVariable = inputFile.findVariable("scan_acquisition_time");
+        massValueVariable = inputFile.findVariable(NetCDFConstants.MASS_VALUES);
+        intensityValueVariable = inputFile.findVariable(NetCDFConstants.INTENSITY_VALUES);
+        scanIndexVariable = inputFile.findVariable(NetCDFConstants.SCAN_INDEXES);
+        scanTimeVariable = inputFile.findVariable(NetCDFConstants.SCAN_ACQUISITION_TIME);
 
         if (massValueVariable == null || intensityValueVariable == null || scanIndexVariable == null || scanTimeVariable == null) {
             throw new netCDFParsingException("Could not find variable mass_values and probably not spectra file");
         }
         assert(massValueVariable.getRank() == 1);
 
-        Attribute massScaleFacAttr = massValueVariable.findAttribute("scale_factor");
+        Attribute massScaleFacAttr = massValueVariable.findAttribute(NetCDFConstants.SCALE_FACTOR);
 
         if (massScaleFacAttr != null) massValueScaleFactor = massScaleFacAttr.getNumericValue().doubleValue();
 
-        Attribute intScaleFacAttr = intensityValueVariable.findAttribute("scale_factor");
+        Attribute intScaleFacAttr = intensityValueVariable.findAttribute(NetCDFConstants.SCALE_FACTOR);
         if (intScaleFacAttr != null) intensityValueScaleFactor = intScaleFacAttr.getNumericValue().doubleValue();
 
 
