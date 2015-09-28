@@ -18,4 +18,11 @@ public class NetCDFConstants {
 
     public static final String SCALE_FACTOR  = "scale_factor";
 
+    public static final String DETECTOR_TYPE = "test_detector_type";
+
+    public static final String IONIZATION_MODE = "test_ionization_mode";
+
+    public static final String INSTRUMENT_MFR = "instrument_mfr";
+
+
 }

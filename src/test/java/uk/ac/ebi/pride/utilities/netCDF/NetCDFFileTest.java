@@ -58,4 +58,9 @@ public class NetCDFFileTest {
     public void tearDown() throws Exception {
         cdfFile.close();
     }
+
+    @Test
+    public void testGetMetadata() throws Exception {
+        System.out.println(cdfFile.getMetadata().toString());
+    }
 }

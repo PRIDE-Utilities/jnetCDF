@@ -9,6 +9,7 @@ import ucar.ma2.InvalidRangeException;
 import ucar.nc2.Attribute;
 import ucar.nc2.NetcdfFile;
 import ucar.nc2.Variable;
+import uk.ac.ebi.pride.utilities.netCDF.core.Metadata;
 import uk.ac.ebi.pride.utilities.netCDF.core.MsScan;
 import uk.ac.ebi.pride.utilities.netCDF.core.SpectrumType;
 import uk.ac.ebi.pride.utilities.netCDF.utils.NetCDFConstants;
@@ -298,5 +299,14 @@ public class NetCDFFile {
         List<Integer> scanIds = new ArrayList<Integer>(indexElement.keySet());
         scanIds.remove(scanIds.size()-1);
         return scanIds;
+    }
+
+    public Metadata getMetadata(){
+
+        HashMap<String, String> globalAttr = new HashMap<String, String>();
+        for (Attribute attr: inputFile.getGlobalAttributes())
+            globalAttr.put(attr.getFullName(), attr.getStringValue());
+
+        return new Metadata(globalAttr);
     }
 }
