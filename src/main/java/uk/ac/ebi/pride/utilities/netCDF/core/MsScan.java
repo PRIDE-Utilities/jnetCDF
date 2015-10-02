@@ -16,6 +16,8 @@ public class MsScan {
 
     private String id;
 
+    private Integer msLevel;
+
     public MsScan() {
     }
 
@@ -56,5 +58,17 @@ public class MsScan {
 
     public void setId(int id) {
         this.id = String.valueOf(id);
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Integer getMsLevel() {
+        return msLevel;
+    }
+
+    public void setMsLevel(Integer msLevel) {
+        this.msLevel = msLevel;
     }
 }

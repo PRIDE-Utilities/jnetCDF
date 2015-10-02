@@ -254,6 +254,8 @@ public class NetCDFFile {
 
         scan.setId(scanIndex);
 
+        scan.setMsLevel(1);
+
         return scan;
 
     }
