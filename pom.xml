@@ -164,10 +164,10 @@
     </distributionManagement>
 
 
-    <scm>
-        <connection>scm:svn:https://jmzreader.googlecode.com/svn/parser/mzxml-parser/trunk</connection>
-        <developerConnection>scm:svn:https://jmzreader.googlecode.com/svn/parser/mzxml-parser/trunk</developerConnection>
-        <url>https://jmzreader.googlecode.com/svn/parser/mzxml-parser/trunk</url>
-    </scm>
-
+	<scm>
+		<connection>scm:git:https://github.com/PRIDE-Utilities/jnetCDF.git</connection>
+		<developerConnection>scm:git:https://github.com/PRIDE-Utilities/jnetCDF.git</developerConnection>
+		<url>https://github.com/PRIDE-Utilities/jnetCDF.git</url>
+		<tag>HEAD</tag>
+	</scm>
 </project>
