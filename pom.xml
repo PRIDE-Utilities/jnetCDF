@@ -77,6 +77,9 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -175,7 +178,7 @@
 		<connection>scm:git:github.com/github.com/PRIDE-Utilities/jnetCDF.git</connection>
 		<developerConnection>scm:git:git@github.com:github.com/PRIDE-Utilities/jnetCDF.git</developerConnection>
 		<url>https://github.com/PRIDE-Utilities/jnetCDF.git</url>
-		<tag>HEAD</tag>
+		<tag>netCDF-parser-0.0.2</tag>
 	</scm>
 
 </project>
