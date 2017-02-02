@@ -3,7 +3,7 @@
 
 	<groupId>uk.ac.ebi.pride.utilities</groupId>
 	<artifactId>netCDF-parser</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 	<name>netCDF-parser</name>
 	<description>A read-only parser for netCDF files</description>
@@ -96,7 +96,7 @@
 		<connection>scm:git:https://github.com/PRIDE-Utilities/jnetCDF.git</connection>
         <developerConnection>scm:git:https://github.com/PRIDE-Utilities/jnetCDF.git</developerConnection>
         <url>https://github.com/PRIDE-Utilities/jnetCDF.git</url>
-        <tag>HEAD</tag>
+        <tag>netCDF-parser-0.0.3</tag>
 	</scm>
 
 </project>
